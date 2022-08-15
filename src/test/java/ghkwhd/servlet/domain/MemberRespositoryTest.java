@@ -9,11 +9,11 @@ import static org.assertj.core.api.Assertions.*;
 
 class MemberRespositoryTest {
 
-    MemberRespository memberRespository = MemberRespository.getInstance();
+    MemberRepository memberRepository = MemberRepository.getInstance();
 
     @AfterEach
     void afterEach() {
-        memberRespository.clearStore();
+        memberRepository.clearStore();
     }
 
     @Test
@@ -22,10 +22,10 @@ class MemberRespositoryTest {
         Member member = new Member("hello", 20);
 
         // when
-        Member savedMember = memberRespository.save(member);
+        Member savedMember = memberRepository.save(member);
 
         // then
-        Member findMember = memberRespository.findById(savedMember.getId());
+        Member findMember = memberRepository.findById(savedMember.getId());
         assertThat(findMember).isEqualTo(savedMember);
     }
 
@@ -37,11 +37,11 @@ class MemberRespositoryTest {
         Member member1 = new Member("member1", 20);
         Member member2 = new Member("member2", 30);
 
-        memberRespository.save(member1);
-        memberRespository.save(member2);
+        memberRepository.save(member1);
+        memberRepository.save(member2);
 
         // when
-        List<Member> result = memberRespository.findAll();
+        List<Member> result = memberRepository.findAll();
 
         // then
         assertThat(result.size()).isEqualTo(2);

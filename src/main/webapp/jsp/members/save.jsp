@@ -1,8 +1,8 @@
 <%@ page import="ghkwhd.servlet.domain.Member" %>
-<%@ page import="ghkwhd.servlet.domain.MemberRespository" %>
+<%@ page import="ghkwhd.servlet.domain.MemberRepository" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-  MemberRespository memberRespository = MemberRespository.getInstance();
+  MemberRepository memberRespository = MemberRepository.getInstance();
 
   // jsp도 servlet으로 변환되기 때문에 request, response 사용 가능
   // form에서 데이터가 오면 getParameter를 통해 꺼낸다

@@ -1,6 +1,6 @@
 package ghkwhd.servlet.web.servlet;
 
-import ghkwhd.servlet.domain.MemberRespository;
+import ghkwhd.servlet.domain.MemberRepository;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 @WebServlet(name = "memberFormServlet", urlPatterns = "/servlet/members/new-form")
 public class MemberFormServlet extends HttpServlet {
 
-    private MemberRespository memberRespository = MemberRespository.getInstance();
+    private MemberRepository memberRepository = MemberRepository.getInstance();
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -1,7 +1,7 @@
 package ghkwhd.servlet.web.servlet;
 
 import ghkwhd.servlet.domain.Member;
-import ghkwhd.servlet.domain.MemberRespository;
+import ghkwhd.servlet.domain.MemberRepository;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 @WebServlet(name = "mamberSaveServlet", urlPatterns = "/servlet/members/save")
 public class MemberSaveServlet extends HttpServlet {
 
-    private MemberRespository memberRespository = MemberRespository.getInstance();
+    private MemberRepository memberRepository = MemberRepository.getInstance();
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,7 +25,7 @@ public class MemberSaveServlet extends HttpServlet {
 
         // Member 객체로 만들어서 저장(save)
         Member member = new Member(username, age);
-        memberRespository.save(member);
+        memberRepository.save(member);
 
         // 결과를 HTML로 응답 (동적인 HTML)
         response.setContentType("text/html");

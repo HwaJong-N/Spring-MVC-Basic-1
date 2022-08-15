@@ -1,9 +1,9 @@
-<%@ page import="ghkwhd.servlet.domain.MemberRespository" %>
+<%@ page import="ghkwhd.servlet.domain.MemberRepository" %>
 <%@ page import="ghkwhd.servlet.domain.Member" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-  MemberRespository memberRespository = MemberRespository.getInstance();
+  MemberRepository memberRespository = MemberRepository.getInstance();
   List<Member> members = memberRespository.findAll();
 %>
 <html>
